@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+    <title>Dating Website - Hobbies and Description</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<br><br><br><br><br><br>
+<h1 class="text1">Please select your hobbies:</h1><br>
+
+<form class="myForm">
+    <label class="container">Sports
+        <input type="checkbox" id="Sports">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">ITC
+        <input type="checkbox" id="ITC">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Music
+        <input type="checkbox" id="Music">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Hanging out with friends
+        <input type="checkbox" id="HangingOutWithFriends">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Cars
+        <input type="checkbox" id="Cars">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">Learning new things
+        <input type="checkbox" id="LearningNewThings">
+        <span class="checkmark"></span>
+    </label>
+
+    <br>
+    <p class="text1">Please enter a short description for yourself:</p><br>
+    <label class="textArea">
+        <textarea name="shortDescription" id="textArea" cols="75" rows="10"></textarea>
+    </label>
+    <br><br><br>
+
+    <input class="myButtons" type="button" name="hobbiesBackButton" id="hobbiesBackButton" value="Previous"
+           onclick="goFromSecondToFirst()">
+    <input class="myButtons" type="button" id="hobbiesNexstButton" value="Next" onclick="goToValidationPage()">
+</form>
+
+<script src="js/main.js"></script>
+
+<!--function to to refill form with user data when using back button-->
+<script>
+    function checkForCookies() {
+        var sports = getCookie("sportsCookie");
+        if (sports === "Sports") {
+            document.getElementById("Sports").checked = true;
+        }
+
+        var itc = getCookie("itcCookie");
+        if (itc === "ITC") {
+            document.getElementById("ITC").checked = true;
+        }
+
+        var music = getCookie("musicCookie");
+        if (music === "Music") {
+            document.getElementById("Music").checked = true;
+        }
+
+        var hangingOutWithFriends = getCookie("hangingOutWithFriendsCookie");
+        if (hangingOutWithFriends === "Hanging out with friends") {
+            document.getElementById("HangingOutWithFriends").checked = true;
+        }
+
+        var cars = getCookie("carsCookie");
+        if (cars === "Cars") {
+            document.getElementById("Cars").checked = true;
+        }
+
+        var learningNewThings = getCookie("learningNewThingsCookie");
+        if (learningNewThings === "Learning new things") {
+            document.getElementById("LearningNewThings").checked = true;
+        }
+
+        var shortUserDescription = getCookie("shortUserDescriptionCookie");
+        document.getElementById("textArea").value = shortUserDescription;
+    }
+
+    checkForCookies();
+</script>
+
+</body>
+</html>

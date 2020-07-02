@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dating Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<br><br><br>
+
+<p class="title">Welcome to FindYourLoveMatch.com</p>
+<br><br><br><br><br>
+<p class="indexText0">Your soul mate is waiting for you!</p>
+<br><br><br>
+<p class="text1">Start filling in your information below</p>
+<br><br><br>
+
+<form class="myForm">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="" required placeholder="First Name"><br><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="" required placeholder="Last Name"><br><br>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" value="" required placeholder="E-mail"><br><br><br>
+    <input class="myButtons" type="button" id="indexNextButton" value="Next" onclick="goToSecondPage()">
+</form>
+
+<script src="js/main.js?v=1.6"></script>
+
+<!--function to to refill form with user data when using back button-->
+<script>
+    function checkForCookies() {
+            var firstName = getCookie("firstNameCookie");
+            document.getElementById("fname").value = firstName;
+
+            var lastName = getCookie("lastNameCookie");
+            document.getElementById("lname").value = lastName;
+
+            var email = getCookie("eMailCookie");
+            document.getElementById("email").value = email;
+    }
+
+    checkForCookies();
+</script>
+
+</body>
+</html>

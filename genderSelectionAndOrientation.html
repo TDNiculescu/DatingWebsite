@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+    <title>Dating Website - Gender and Orientation Selection</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p class="text1"> Please select your gender and preference</p>
+<br><br><br>
+
+<form class="myForm">
+
+    <label for="genders">Choose your gender:</label>
+    <select id="genders" required>
+        <option value="" selected disabled hidden>Your gender here</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br><br><br>
+    <label for="lookingFor">Choose the gender of your soul mate</label>
+    <select id="lookingFor" required>
+        <option value="" selected disabled hidden>Choose here</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+    <br><br><br><br><br><br>
+    <input class="myButtons" type="button" name="genderSelectionBackButton" id="genderSelectionBackButton"
+           value="Previous" onclick="goFromSecondToFirst()">
+    <input class="myButtons" type="button" id="genderSelectionNextButton" value="Next" onclick="goToThirdPage()">
+</form>
+
+<script src="js/main.js"></script>
+
+<!--function to to refill form with user data when using back button-->
+<script>
+    function checkForCookies() {
+        var userGender = getCookie("userGenderCookie");
+        document.getElementById("genders").value = userGender;
+
+        var genderInterest = getCookie("genderInterestCookie");
+        document.getElementById("lookingFor").value = genderInterest;
+    }
+
+    checkForCookies();
+</script>
+
+</body>
+</html>
